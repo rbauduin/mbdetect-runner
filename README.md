@@ -11,6 +11,11 @@ Requirements
 You need a recent vagrant installed and virtualbox. Get it at http://www.vagrantup.com/downloads.html
 and https://www.virtualbox.org/wiki/Downloads
 
+On Linux, you might also need to load the required kernel modules to use virtualbox and the host network adaptor:
+```
+vboxdrv vboxnetadp vboxnetflt
+```
+
 When vagrant is installed, you need to install the vagrant-trigger plugin:
   vagrant plugin install vagrant-triggers
 
