@@ -1,0 +1,2 @@
+Scripts in these subdirectories with the sh extension and executable will be executed after
+the corresponding event
