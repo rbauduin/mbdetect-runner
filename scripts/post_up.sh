@@ -3,6 +3,9 @@
 
 echo "Will setup masquerading. Sudo might ask your password..."
 sudo iptables -t nat -I POSTROUTING -s 192.168.33.0/24 -j MASQUERADE
+sudo iptables -I FORWARD -i vboxnet0 -j ACCEPT
+sudo iptables -I FORWARD -o vboxnet0 -j ACCEPT
+sudo iptables -I INPUT -i vboxnet0 -j ACCEPT
 
 for f in user_scripts/up/* ; do 
 	if [[ -x $f ]] ; then
