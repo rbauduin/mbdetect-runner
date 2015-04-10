@@ -134,6 +134,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   #######################################################################
 
   Tests should have run automatically, and you should have seen the output above.
+  You can find the client logs in the ./logs/ directory.
   
   You can run the test manually too:
     ./run_tests.sh
