@@ -7,7 +7,10 @@ sudo iptables -I FORWARD -i vboxnet0 -j ACCEPT
 sudo iptables -I FORWARD -o vboxnet0 -j ACCEPT
 sudo iptables -I INPUT -i vboxnet0 -j ACCEPT
 
-for f in user_scripts/up/* ; do 
+cat /proc/sys/net/ipv4/ip_forward > .ip_forward
+sudo sysctl net.ipv4.ip_forward=1
+
+for f in user_scripts/up/* ; do
 	if [[ -x $f ]] ; then
 		echo $(basename $f)
 		$f
