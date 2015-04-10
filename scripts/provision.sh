@@ -5,4 +5,4 @@ set -x
 host_ipv4="192.168.33.1"
 
 ip route del default via 10.0.2.2
-ip route add default via $host_ipv4
+ip route add default via $host_ipv4 src 192.168.33.10
