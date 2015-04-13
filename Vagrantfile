@@ -11,6 +11,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   # Every Vagrant virtual environment requires a box to build off of.
   config.vm.box = "rbauduin/mbdetect"
+  config.vm.box_version = "=0.0.3"
 
 
   config.vm.hostname = "mbdetectbox"
