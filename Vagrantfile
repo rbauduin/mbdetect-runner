@@ -43,9 +43,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # the path on the guest to mount the folder. And the optional third
   # argument is a set of non-required options.
 
-  # Disable default shared folder and create our shared folder (rsync type)
-  # do not use vbox shared folder so we can update kernel without loosing functionality
-  config.vm.synced_folder '.', '/vagrant', disabled: true
+  # put our directory under /vagrant in the vm
+  config.vm.synced_folder '.', '/vagrant', type: "rsync"
 
   # Provider-specific configuration so you can fine-tune various
   # backing providers for Vagrant. These expose provider-specific options.

@@ -1,7 +1,7 @@
 #!/bin/bash
-
+# script launching the test from outside the vm
 echo "Will now run mbdetect client"
-vagrant ssh -c "sudo /usr/local/bin/client"
+vagrant ssh -c "/vagrant/scripts/run_tests.sh"
 
 echo "copying logs"
 ./rsync.sh -a default:logs ./
