@@ -7,4 +7,4 @@ echo "copying logs"
 ./rsync.sh -a default:logs ./
 
 echo "You can find your run logs under the logs/ directory:"
-ls logs/
+ls -t logs/ | head -n 1

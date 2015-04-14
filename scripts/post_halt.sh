@@ -1,11 +1,11 @@
 #!/bin/bash
-# Removing NAT
-
-echo "Will remove masquerading. Sudo might ask your password..."
-sudo iptables -t nat -D POSTROUTING -s 192.168.33.0/24 -j MASQUERADE
+# Runs all scripts in turn located in user_scripts/halt
+# This is done after vagrant halted the vm
 
 for f in user_scripts/halt/* ; do 
+	[[ -f $f ]] || continue
 	if [[ -x $f ]] ; then
+		echo $(basename $f)
 		$f
 	else
 		echo "Not executable! Skipping $f"

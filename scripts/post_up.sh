@@ -1,10 +1,9 @@
 #!/bin/bash
-# Setting up NAT
-
-echo "Will setup masquerading. Sudo might ask your password..."
-sudo iptables -t nat -A POSTROUTING -s 192.168.33.0/24 -j MASQUERADE
+# Runs all scripts in turn located in user_scripts/up
+# This is done after vagrant brought up the vm
 
 for f in user_scripts/up/* ; do 
+	[[ -f $f ]] || continue
 	if [[ -x $f ]] ; then
 		echo $(basename $f)
 		$f
