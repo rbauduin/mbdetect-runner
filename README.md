@@ -24,6 +24,8 @@ Using it
 Get it and use it:
 
     git clone https://github.com/rbauduin/mbdetect_runner.git
+    # install vagrant plugin, needed only once
+    vagrant plugin install vagrant-triggers
     cd mbdetect_runner
     vagrant up
 
