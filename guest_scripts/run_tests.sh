@@ -9,7 +9,7 @@ trace=$(tempfile)
 tmux new -d -s tcpdump "/usr/sbin/tcpdump -i any port 80 -s 120 -w $trace"
 
 # run tests
-sudo /usr/local/bin/client
+sudo ./client
 
 # stop tcpdump
 tmux kill-session -t tcpdump

@@ -1,6 +1,9 @@
 #!/bin/bash
 set -x
 
+# copy all guest scripts
+cp /vagrant/guest_scripts/* /usr/local/bin/
+
 # set default route via the bridge, not the nat
 host_ipv4="192.168.33.1"
 
