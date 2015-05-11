@@ -1,5 +1,5 @@
 #!/bin/bash
-set -x 
+#set -x 
 if [[ ! -x $(which vagrant) ]] ; then
 	echo >2 "Vagrant executabl not found" 
 	exit ;
@@ -12,7 +12,7 @@ echo "All set up, starting vm..."
 vagrant up
 
 echo "Will now run mbdetect client"
-vagrant ssh -c "/vagrant/scripts/run_tests.sh"
+vagrant ssh -c "/vagrant/guest_scripts/run_tests.sh"
 
 echo "copying logs"
 ./rsync.sh -a default:logs ./
